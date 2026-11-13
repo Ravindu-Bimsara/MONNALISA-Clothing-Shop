@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MONNALISA — Alta Moda Femminile | Roma Boutique</title>
+  <meta name="description" content="Monnalisa: Boutique di alta moda femminile a Roma. Abiti esclusivi, ricami floreali, gonne in tulle e sartoria d'autore." />
+  
+  <!-- Google Fonts: Luxury Editorial Serifs & Modern Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Italiana&family=Plus+Jakarta+Sans:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./css/main.css" />
+</head>
+<body>
+
+  <!-- Announcement Bar with Live Clocks -->
+  <aside class="announcement-bar">
+    <div class="announcement-track">
+      <span data-i18n="announcement_text">BOUTIQUE MONNALISA ROMA — SPEDIZIONE COMPLIMENTARE SU TUTTI GLI ORDINI IN ITALIA ED EUROPA</span>
+      <span class="live-clocks">
+        <span data-i18n="announcement_clock">ROMA</span>: <span id="rome-time">--:--</span> | 
+        PARIGI: <span id="paris-time">--:--</span> | 
+        NYC: <span id="nyc-time">--:--</span>
+      </span>
+    </div>
+  </aside>
+
+  <!-- Sticky Luxury Header -->
+  <header class="site-header" id="navbar">
+    <div class="header-inner">
+      <nav class="nav-left">
+        <a href="index.html" class="nav-link active" data-i18n="nav_home">Home</a>
+        <a href="shop.html" class="nav-link" data-i18n="nav_shop">Collezione</a>
+        <a href="shop.html?filter=new" class="nav-link" data-i18n="nav_new">Nuovi Arrivi</a>
+        <a href="sale.html" class="nav-link" data-i18n="nav_sale">Saldi</a>
+        <a href="about.html" class="nav-link" data-i18n="nav_about">Chi Siamo</a>
+        <a href="contact.html" class="nav-link" data-i18n="nav_contact">Contatti</a>
+      </nav>
+
+      <div class="brand-monogram">
+        <a href="index.html">MONNALISA</a>
+      </div>
+
+      <div class="nav-right">
+        <!-- Language Switcher -->
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="it">IT</button>
+          <span class="lang-divider">/</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+
+        <!-- Currency Selector -->
+        <select class="currency-select" aria-label="Currency Selector">
+          <option value="EUR">EUR (€)</option>
+          <option value="USD">USD ($)</option>
+          <option value="GBP">GBP (£)</option>
+          <option value="JPY">JPY (¥)</option>
+        </select>
+
+        <!-- Wishlist Icon -->
+        <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge wishlist-count-badge">0</span>
+        </a>
+
+        <!-- Cart Trigger -->
+        <button class="icon-btn cart-trigger" aria-label="Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="badge cart-count-badge">0</span>
+        </button>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Open Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Split Screen Hero Monolith (Showcasing Rome Boutique & Signature Couture) -->
+  <section class="hero-split">
+    <!-- Left: Real Rome Boutique Facade -->
+    <div class="monolith rome-monolith">
+      <div class="monolith-bg" style="background-image: url('images/boutique-facade-rome.jpg');"></div>
+      <div class="monolith-overlay"></div>
+      <div class="monolith-content">
+        <span class="location-tag" data-i18n="hero_coords">VFX9+Q2 ROMA, ITALIA</span>
+        <h2 class="city-name">Boutique & Atelier</h2>
+        <h3 class="region-name">Roma</h3>
+        <p class="monolith-desc" data-i18n="hero_card1_desc">Atmosfera intima, archi romani e accoglienza sartoriale su misura.</p>
+        <a href="about.html" class="outline-btn" data-i18n="hero_card1_btn">SCOPRI LA BOUTIQUE</a>
+      </div>
+    </div>
+
+    <!-- Right: Handcrafted Peony Couture -->
+    <div class="monolith couture-monolith">
+      <div class="monolith-bg" style="background-image: url('images/couture-embroidered-peony.jpg');"></div>
+      <div class="monolith-overlay"></div>
+      <div class="monolith-content">
+        <span class="location-tag" data-i18n="hero_tag">ROMA — CAPITALE DELLA MODA</span>
+        <h2 class="city-name">Alta Moda</h2>
+        <h3 class="region-name">Couture</h3>
+        <p class="monolith-desc" data-i18n="hero_card2_desc">Abiti in seta, ricami floreali a mano e tessuti italiani di prima scelta.</p>
+        <a href="shop.html" class="outline-btn" data-i18n="hero_card2_btn">ACQUISTA LA CAPSULA</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Collections Categories Banner -->
+  <section style="background:var(--bg-secondary); border-bottom:1px solid var(--border-subtle); padding:60px 40px;">
+    <div style="max-width:1600px; margin:0 auto;">
+      <div class="section-header" style="margin-bottom:35px;">
+        <div class="sec-meta">
+          <span class="roman-numeral">I</span>
+          <div>
+            <h2 class="sec-title" data-i18n="sec_collections_title">LE NOSTRE COLLEZIONI</h2>
+            <span class="sec-subtitle" data-i18n="sec_collections_sub">SELEZIONE CURATA PER OGNI OCCASIONE</span>
+          </div>
+        </div>
+        <a href="shop.html" class="view-detail-link" style="font-size:0.8rem;" data-i18n="btn_load_more">Vedi Tutte &rarr;</a>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:24px;">
+        <!-- Category Card 1: Abiti -->
+        <a href="shop.html?cat=dresses" style="position:relative; aspect-ratio:4/5; overflow:hidden; border:1px solid var(--border-subtle); display:block; group">
+          <img src="images/couture-embroidered-peony.jpg" alt="Abiti" style="width:100%; height:100%; object-fit:cover; transition:transform 0.8s ease;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'" />
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(6,6,7,0.85) 100%); display:flex; flex-direction:column; justify-content:flex-end; padding:24px;">
+            <span style="font-size:0.7rem; color:var(--accent-gold); letter-spacing:0.2em; text-transform:uppercase;" data-i18n="cat_dresses">Abiti da Sera & Giorno</span>
+            <h3 style="font-family:var(--font-serif); font-size:1.3rem; letter-spacing:0.1em; color:#fff;">Abiti Couture</h3>
+          </div>
+        </a>
+
+        <!-- Category Card 2: Gonne & Tulle -->
+        <a href="shop.html?cat=skirts" style="position:relative; aspect-ratio:4/5; overflow:hidden; border:1px solid var(--border-subtle); display:block;">
+          <img src="images/tulle-floral-skirts-rack.jpg" alt="Gonne in Tulle" style="width:100%; height:100%; object-fit:cover; transition:transform 0.8s ease;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'" />
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(6,6,7,0.85) 100%); display:flex; flex-direction:column; justify-content:flex-end; padding:24px;">
+            <span style="font-size:0.7rem; color:var(--accent-gold); letter-spacing:0.2em; text-transform:uppercase;" data-i18n="cat_skirts">Gonne Eleganti</span>
+            <h3 style="font-family:var(--font-serif); font-size:1.3rem; letter-spacing:0.1em; color:#fff;">Gonne & Tulle 3D</h3>
+          </div>
+        </a>
+
+        <!-- Category Card 3: Giacche & Sartoria -->
+        <a href="shop.html?cat=jackets" style="position:relative; aspect-ratio:4/5; overflow:hidden; border:1px solid var(--border-subtle); display:block;">
+          <img src="images/curator-styling-boutique.jpg" alt="Giacche & Completi" style="width:100%; height:100%; object-fit:cover; transition:transform 0.8s ease;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'" />
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(6,6,7,0.85) 100%); display:flex; flex-direction:column; justify-content:flex-end; padding:24px;">
+            <span style="font-size:0.7rem; color:var(--accent-gold); letter-spacing:0.2em; text-transform:uppercase;" data-i18n="cat_jackets">Giacche & Completi</span>
+            <h3 style="font-family:var(--font-serif); font-size:1.3rem; letter-spacing:0.1em; color:#fff;">Sartoria & Blazer</h3>
+          </div>
+        </a>
+
+        <!-- Category Card 4: Cappotti & Capispalla -->
+        <a href="shop.html?cat=outerwear" style="position:relative; aspect-ratio:4/5; overflow:hidden; border:1px solid var(--border-subtle); display:block;">
+          <img src="images/atelier-textured-coat-mannequin.jpg" alt="Cappotti" style="width:100%; height:100%; object-fit:cover; transition:transform 0.8s ease;" onmouseover="this.style.transform='scale(1.06)'" onmouseout="this.style.transform='scale(1)'" />
+          <div style="position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(6,6,7,0.85) 100%); display:flex; flex-direction:column; justify-content:flex-end; padding:24px;">
+            <span style="font-size:0.7rem; color:var(--accent-gold); letter-spacing:0.2em; text-transform:uppercase;" data-i18n="cat_outerwear">Cappotti & Capispalla</span>
+            <h3 style="font-family:var(--font-serif); font-size:1.3rem; letter-spacing:0.1em; color:#fff;">Cappotti Bouclé</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collection Section: Curated Products with Filtering & Load More -->
+  <section class="collection-section" id="shop">
+    <div class="section-watermark">ROMA</div>
+    
+    <div class="section-header">
+      <div class="sec-meta">
+        <span class="roman-numeral">II</span>
+        <div>
+          <h2 class="sec-title" data-i18n="sec_featured_title">CAPI IN PRIMO PIANO</h2>
+          <span class="sec-subtitle" data-i18n="sec_featured_sub">L'ECCELLENZA DELLA BOUTIQUE ROMANA</span>
+        </div>
+      </div>
+      <div class="filter-group">
+        <button class="filter-btn active" data-category="all">
+          <span data-i18n="filter_all">Tutti</span> (<span id="count-all">16</span>)
+        </button>
+        <button class="filter-btn" data-category="dresses">
+          <span data-i18n="cat_dresses">Abiti</span> (<span id="count-dresses">4</span>)
+        </button>
+        <button class="filter-btn" data-category="skirts">
+          <span data-i18n="cat_skirts">Gonne</span> (<span id="count-skirts">3</span>)
+        </button>
+        <button class="filter-btn" data-category="jackets">
+          <span data-i18n="cat_jackets">Giacche</span> (<span id="count-jackets">2</span>)
+        </button>
+        <button class="filter-btn" data-category="outerwear">
+          <span data-i18n="cat_outerwear">Cappotti</span> (<span id="count-outerwear">2</span>)
+        </button>
+        <button class="filter-btn" data-category="accessories">
+          <span data-i18n="cat_accessories">Accessori</span> (<span id="count-accessories">2</span>)
+        </button>
+      </div>
+    </div>
+
+    <!-- Dynamic Product Cards Grid -->
+    <div class="products-grid" id="products-container"></div>
+
+    <!-- Load More Action Container -->
+    <div class="load-more-container" id="load-more-wrapper">
+      <div class="progress-indicator">
+        <span id="load-progress-text">Showing 8 of 16 items</span>
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        </div>
+      </div>
+      <button id="load-more-btn" class="solid-btn load-more-btn">
+        <span data-i18n="btn_load_more">CARICA ALTRI CAPI</span>
+        <i class="fa-solid fa-arrow-down"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- Atmospheric Runway / Roman Philosophy Section -->
+  <section class="runway-section" id="runway">
+    <div class="runway-bg" style="background-image: url('images/boutique-entrance-mannequin.jpg');"></div>
+    <div class="runway-overlay"></div>
+    <div class="runway-content">
+      <span class="collab-tag" data-i18n="hero_tag">ROMA — CAPITALE DELLA MODA</span>
+      <h2 class="runway-title">LA MODA PASSA, LO STILE RESTA</h2>
+      <p class="runway-quote">"Indossare Monnalisa significa celebrare una femminilità consapevole, autentica, che trova nel dettaglio sartoriale il proprio monumento quotidiano."</p>
+      <div class="runway-meta">
+        <span>MONNALISA SHOP ROMA</span>
+        <span class="divider-line"></span>
+        <span>VFX9+Q2 ROMA, ITALIA</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Collection Statement Banner -->
+  <section class="curated-banner" style="background-image: linear-gradient(rgba(6,6,7,0.88), rgba(6,6,7,0.88)), url('images/boutique-bicycle-interior.jpg');">
+    <div class="curated-card">
+      <div class="curated-meta">
+        <span data-i18n="badge_new">NUOVI ARRIVI</span>
+        <span class="divider-line"></span>
+        <span>CURATA DA</span>
+      </div>
+      <h2 class="signature-title">Monnalisa</h2>
+      <p class="curated-desc" data-i18n="hero_desc">
+        Nel cuore eterno di Roma, una boutique dedicata alla donna contemporanea. Creazioni d'autore, tessuti preziosi e cura sartoriale per chi ama distinguersi.
+      </p>
+      <a href="shop.html" class="outline-btn" data-i18n="hero_btn_shop">SCOPRI LA COLLEZIONE</a>
+    </div>
+  </section>
+
+  <!-- Atelier Craftsmanship Section (Featuring Rome Boutique Photos) -->
+  <section class="atelier-section" id="atelier">
+    <div class="section-header">
+      <div class="sec-meta">
+        <span class="roman-numeral">III</span>
+        <div>
+          <h2 class="sec-title">ATELIER & MAESTRIA SARTORIALE</h2>
+          <span class="sec-subtitle">ROMA — ATMOSFERA & MANIFATTURA ITALIANA</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="atelier-grid">
+      <div class="atelier-text-block">
+        <div class="crafted-badge">
+          <span>CREAZIONI ROMANE</span>
+          <span class="divider-line"></span>
+          <span>100% ITALIAN STYLE</span>
+        </div>
+        <h3 class="cursive-subhead">Passione Pura per la Bellezza</h3>
+        <p>
+          Ogni capo presente nella nostra boutique di Roma viene selezionato e rifinito per esaltare l'armonia della donna. Dalle sete floreali ricamate a mano alle vaporose gonne in tulle e alla sartoria strutturata con corsetto, garantiamo un'esperienza di shopping autentica e memorabile.
+        </p>
+        <div class="stats-row">
+          <div class="stat-item">
+            <h4>100%</h4>
+            <p>Stile Italiano</p>
+          </div>
+          <div class="stat-item">
+            <h4>Bespoke</h4>
+            <p>Consulenza Su Misura</p>
+          </div>
+          <div class="stat-item">
+            <h4>Roma</h4>
+            <p>Boutique VFX9+Q2</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="atelier-visual">
+        <img src="images/curator-styling-boutique.jpg" alt="Stilista e curatrice Monnalisa Roma" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Testimonials Section -->
+  <section class="press-section" id="reviews" style="background:var(--bg-secondary); border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle);">
+    <div class="section-header">
+      <div class="sec-meta">
+        <span class="roman-numeral">IV</span>
+        <div>
+          <h2 class="sec-title" data-i18n="sec_reviews_title">PARLANO DI NOI</h2>
+          <span class="sec-subtitle" data-i18n="sec_reviews_sub">L'ESPERIENZA DELLE NOSTRE CLIENTI</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="press-grid" id="reviews-container"></div>
+  </section>
+
+  <!-- Instagram-Inspired Rome Boutique Gallery -->
+  <section style="padding: 100px 0 60px;">
+    <div style="text-align:center; max-width:700px; margin:0 auto 40px; padding:0 20px;">
+      <span style="color:var(--accent-gold); font-size:0.75rem; letter-spacing:0.25em; text-transform:uppercase;" data-i18n="sec_instagram_sub">SCATTI DALLA NOSTRA BOUTIQUE A ROMA</span>
+      <h2 style="font-family:var(--font-serif); font-size:1.8rem; letter-spacing:0.18em; margin:10px 0;" data-i18n="sec_instagram_title">ATMOSFERA ROMANA</h2>
+      <p style="color:var(--text-muted); font-size:0.85rem;">Segui il nostro racconto fotografico quotidiano tra le vie di Roma.</p>
+    </div>
+
+    <div class="instagram-gallery-grid">
+      <a href="https://maps.app.goo.gl/5teJvapkdo6K3t237" target="_blank" rel="noopener" class="insta-item">
+        <img src="images/boutique-facade-rome.jpg" alt="Monnalisa Boutique Facciata Roma" />
+        <div class="insta-overlay">
+          <i class="fa-brands fa-instagram"></i>
+          <span>@monnalisa_roma</span>
+        </div>
+      </a>
+      <a href="shop.html" class="insta-item">
+        <img src="images/couture-embroidered-peony.jpg" alt="Abito ricamato peonia" />
+        <div class="insta-overlay">
+          <i class="fa-brands fa-instagram"></i>
+          <span>@monnalisa_roma</span>
+        </div>
+      </a>
+      <a href="about.html" class="insta-item">
+        <img src="images/boutique-entrance-mannequin.jpg" alt="Ingresso boutique Roma" />
+        <div class="insta-overlay">
+          <i class="fa-brands fa-instagram"></i>
+          <span>@monnalisa_roma</span>
+        </div>
+      </a>
+      <a href="shop.html?cat=skirts" class="insta-item">
+        <img src="images/tulle-floral-skirts-rack.jpg" alt="Gonne in tulle e fiori 3D" />
+        <div class="insta-overlay">
+          <i class="fa-brands fa-instagram"></i>
+          <span>@monnalisa_roma</span>
+        </div>
+      </a>
+      <a href="about.html" class="insta-item">
+        <img src="images/boutique-bicycle-interior.jpg" alt="Interno boutique con bicicletta decorativa" />
+        <div class="insta-overlay">
+          <i class="fa-brands fa-instagram"></i>
+          <span>@monnalisa_roma</span>
+        </div>
+      </a>
+      <a href="shop.html?cat=jackets" class="insta-item">
+        <img src="images/curator-styling-boutique.jpg" alt="Styling boutique Monnalisa Roma" />
+        <div class="insta-overlay">
+          <i class="fa-brands fa-instagram"></i>
+          <span>@monnalisa_roma</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- VIP Fitting Concierge Appointment Form -->
+  <section class="concierge-section" id="concierge">
+    <div class="concierge-container">
+      <div class="concierge-details">
+        <span class="collab-tag" data-i18n="sec_concierge_title">APPUNTAMENTO PRIVATO</span>
+        <h2 class="concierge-heading" data-i18n="sec_concierge_sub">CONSULENZA D'IMMAGINE IN BOUTIQUE</h2>
+        <p class="concierge-desc">
+          Prenota una sessione privata con la nostra consulente di stile presso la boutique Monnalisa a Roma. Avrai l'intero atelier dedicato a te, con prova capi personalizzata e consigli su misura.
+        </p>
+        <div class="concierge-info">
+          <div><i class="fa-solid fa-location-dot"></i> VFX9+Q2 Roma, Metropolitan City of Rome Capital, Italia</div>
+          <div><i class="fa-solid fa-phone"></i> +39 340 482 5926</div>
+          <div><i class="fa-brands fa-whatsapp"></i> Assistenza diretta WhatsApp attiva</div>
+        </div>
+      </div>
+
+      <form id="concierge-form" class="concierge-form">
+        <div class="form-row">
+          <input type="text" id="vip-name" placeholder="NOME COMPLETO" required />
+          <input type="email" id="vip-email" placeholder="INDIRIZZO EMAIL" required />
+        </div>
+        <div class="form-row">
+          <input type="tel" id="vip-phone" placeholder="NUMERO TELEFONO / WHATSAPP" required />
+          <input type="date" id="vip-date" required />
+        </div>
+        <textarea id="vip-notes" rows="3" placeholder="PREFERENZE CAPI, OCCASIONE SPECIALE O TAGLIA"></textarea>
+        <button type="submit" class="solid-btn full-btn">PRENOTA CONSULENZA</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Luxury Footer -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-col brand-col">
+        <h2 class="footer-logo">MONNALISA</h2>
+        <p data-i18n="footer_desc">Boutique di moda femminile a Roma. Abiti eleganti, completi sartoriali, maglieria di lusso e accessori preziosi.</p>
+        <div style="margin-bottom:12px;">
+          <a href="https://maps.app.goo.gl/5teJvapkdo6K3t237" target="_blank" rel="noopener" style="color:var(--accent-gold); font-size:0.8rem; display:inline-flex; align-items:center; gap:8px;">
+            <i class="fa-solid fa-location-dot"></i> VFX9+Q2 Roma, Italia
+          </a>
+        </div>
+        <div>
+          <a href="tel:+393404825926" style="color:var(--text-muted); font-size:0.8rem; display:inline-flex; align-items:center; gap:8px;">
+            <i class="fa-solid fa-phone"></i> +39 340 482 5926
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="col-title" data-i18n="footer_col_nav">Esplora</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="shop.html" data-i18n="nav_shop">Collezione</a></li>
+          <li><a href="sale.html" data-i18n="nav_sale">Saldi & Offerte</a></li>
+          <li><a href="about.html" data-i18n="nav_about">Chi Siamo</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">Contatti</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="col-title" data-i18n="footer_col_categories">Collezioni</h4>
+        <ul>
+          <li><a href="shop.html?cat=dresses" data-i18n="cat_dresses">Abiti da Sera & Giorno</a></li>
+          <li><a href="shop.html?cat=skirts" data-i18n="cat_skirts">Gonne Eleganti</a></li>
+          <li><a href="shop.html?cat=jackets" data-i18n="cat_jackets">Giacche & Sartoria</a></li>
+          <li><a href="shop.html?cat=outerwear" data-i18n="cat_outerwear">Cappotti & Capispalla</a></li>
+          <li><a href="shop.html?cat=accessories" data-i18n="cat_accessories">Accessori & Gioielli</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter-col">
+        <h4 class="col-title" data-i18n="newsletter_title">Newsletter Monnalisa Privé</h4>
+        <p data-i18n="newsletter_desc">Ricevi in anteprima le nuove collezioni, gli inviti agli eventi privati in boutique e le promozioni esclusive.</p>
+        <form class="subscribe-box newsletter-form">
+          <input type="email" placeholder="LA TUA EMAIL" data-i18n-placeholder="newsletter_placeholder" required />
+          <button type="submit" class="subscribe-btn" data-i18n="newsletter_btn">ISCRIVITI</button>
+        </form>
+        <div style="margin-top:20px;">
+          <a href="https://wa.me/393404825926" target="_blank" rel="noopener" style="color:#25d366; font-size:0.8rem; display:inline-flex; align-items:center; gap:8px;">
+            <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp: +39 340 482 5926
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 MONNALISA SHOP ROMA. <span data-i18n="footer_rights">TUTTI I DIRITTI RISERVATI.</span></p>
+      <div class="legal-links">
+        <a href="contact.html">Boutique Roma</a>
+        <a href="https://maps.app.goo.gl/5teJvapkdo6K3t237" target="_blank" rel="noopener">Google Maps</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-out Shopping Bag Drawer -->
+  <div class="cart-drawer-backdrop" id="cart-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="drawer-header">
+      <h3><span data-i18n="cart_title">IL TUO CARRELLO</span> (<span id="cart-items-count">0</span>)</h3>
+      <button class="close-drawer-btn" id="close-cart-btn">&times;</button>
+    </div>
+    <div class="drawer-body" id="cart-items-list">
+      <div class="empty-cart-msg" data-i18n="cart_empty">Il tuo carrello è attualmente vuoto.</div>
+    </div>
+    <div class="drawer-footer">
+      <div class="cart-subtotal">
+        <span data-i18n="cart_subtotal">Subtotale</span>
+        <span id="cart-total-price">€ 0.00</span>
+      </div>
+      <button class="checkout-btn" id="checkout-btn" data-i18n="cart_checkout_btn">PROCEDI ALL'ACQUISTO</button>
+      <div style="margin-top:10px; text-align:center;">
+        <a href="cart.html" style="font-size:0.75rem; color:var(--accent-gold); text-decoration:underline;">Vedi Pagina Carrello Completa</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="mobile-nav-header">
+      <div class="brand-monogram">
+        <a href="index.html">MONNALISA</a>
+      </div>
+      <button class="mobile-close-btn" id="mobile-nav-close">&times;</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link active" data-i18n="nav_home">Home</a>
+      <a href="shop.html" class="mobile-nav-link" data-i18n="nav_shop">Collezione</a>
+      <a href="shop.html?filter=new" class="mobile-nav-link" data-i18n="nav_new">Nuovi Arrivi</a>
+      <a href="sale.html" class="mobile-nav-link" data-i18n="nav_sale">Saldi & Offerte</a>
+      <a href="about.html" class="mobile-nav-link" data-i18n="nav_about">Chi Siamo</a>
+      <a href="contact.html" class="mobile-nav-link" data-i18n="nav_contact">Contatti</a>
+      <a href="wishlist.html" class="mobile-nav-link" data-i18n="nav_wishlist">I Tuoi Preferiti</a>
+      <a href="cart.html" class="mobile-nav-link" data-i18n="nav_cart">Il Tuo Carrello</a>
+    </div>
+    <div class="mobile-nav-footer">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-size:0.75rem; color:var(--text-muted);" data-i18n="nav_lang">Lingua:</span>
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="it">IT</button>
+          <span class="lang-divider">/</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
+      <a href="https://wa.me/393404825926" target="_blank" rel="noopener" class="whatsapp-inquire-btn" style="width:100%;">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp Roma
+      </a>
+    </div>
+  </aside>
+
+  <!-- Quick View Modal -->
+  <div class="modal-backdrop" id="quick-view-modal">
+    <div class="modal-card">
+      <button class="modal-close-btn">&times;</button>
+      <div id="qv-modal-content"></div>
+    </div>
+  </div>
+
+  <!-- Checkout Demo Modal -->
+  <div class="modal-backdrop" id="checkout-demo-modal">
+    <div class="modal-card" style="max-width:650px;">
+      <button class="modal-close-btn">&times;</button>
+      <div id="checkout-demo-content"></div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Action Button -->
+  <a href="https://wa.me/393404825926" id="floating-whatsapp-btn" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp Monnalisa Roma">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="floating-whatsapp-tooltip">Chatta con Monnalisa Roma</span>
+  </a>
+
+  <!-- Toast Notification Wrapper -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="./Script/data.js"></script>
+  <script src="./Script/app.js"></script>
+
+  <!-- Homepage Inline Controller -->
+  <script>
+    let homeActiveCategory = "all";
+    let homeDisplayedCount = 8;
+    const HOME_ITEMS_PER_LOAD = 8;
+
+    function renderHomeProducts() {
+      const container = document.getElementById("products-container");
+      if (!container) return;
+
+      let filtered = MONNALISA_PRODUCTS;
+      if (homeActiveCategory !== "all") {
+        filtered = MONNALISA_PRODUCTS.filter(p => p.category === homeActiveCategory);
+      }
+
+      const visible = filtered.slice(0, homeDisplayedCount);
+      container.innerHTML = "";
+
+      visible.forEach(p => {
+        const title = MonnalisaApp.lang === "en" ? p.title_en : p.title_it;
+        const desc = MonnalisaApp.lang === "en" ? p.desc_en : p.desc_it;
+        const cat = MonnalisaApp.lang === "en" ? p.category_en : p.category_it;
+        const isFav = MonnalisaApp.isInWishlist(p.id);
+
+        const card = document.createElement("div");
+        card.className = "product-card";
+        card.innerHTML = `
+          <div class="product-thumb">
+            <div class="card-badges">
+              ${p.onSale ? `<span class="badge-pill sale">${MonnalisaApp.t("badge_sale")}</span>` : ""}
+              ${p.isNew ? `<span class="badge-pill new">${MonnalisaApp.t("badge_new")}</span>` : ""}
+            </div>
+
+            <button class="wishlist-toggle-btn ${isFav ? "active" : ""}" data-product-id="${p.id}" title="${MonnalisaApp.t("nav_wishlist")}">
+              <i class="fa-${isFav ? "solid" : "regular"} fa-heart"></i>
+            </button>
+
+            <img src="${p.img}" alt="${title}" loading="lazy" />
+
+            <button class="quick-view-overlay-btn" onclick="MonnalisaApp.openQuickView('${p.id}')">
+              <i class="fa-regular fa-eye"></i> ${MonnalisaApp.t("btn_quick_view")}
+            </button>
+          </div>
+
+          <div class="product-info">
+            <div>
+              <span class="product-category">${cat}</span>
+              <h3 class="product-title">
+                <a href="product-detail.html?id=${p.id}">${title}</a>
+              </h3>
+              <p class="product-desc">${desc}</p>
+            </div>
+
+            <div class="product-footer">
+              <div class="price-container">
+                ${
+                  p.onSale && p.salePriceEUR
+                    ? `<span class="sale-price">${MonnalisaApp.formatPrice(p.salePriceEUR)}</span>
+                       <span class="original-price">${MonnalisaApp.formatPrice(p.priceEUR)}</span>`
+                    : `<span class="product-price">${MonnalisaApp.formatPrice(p.priceEUR)}</span>`
+                }
+              </div>
+              <div class="card-actions">
+                <a href="product-detail.html?id=${p.id}" class="view-detail-link">${MonnalisaApp.t("btn_details")}</a>
+                <button class="add-cart-btn" onclick="MonnalisaApp.addToCart('${p.id}')">
+                  <i class="fa-solid fa-plus"></i> ${MonnalisaApp.t("btn_add_cart")}
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+
+      // Update wishlist button listeners
+      container.querySelectorAll(".wishlist-toggle-btn").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          MonnalisaApp.toggleWishlist(btn.dataset.productId);
+        });
+      });
+
+      // Update progress bar
+      updateHomeProgress(visible.length, filtered.length);
+    }
+
+    function updateHomeProgress(current, total) {
+      const progressText = document.getElementById("load-progress-text");
+      const progressBarFill = document.getElementById("progress-bar-fill");
+      const loadMoreBtn = document.getElementById("load-more-btn");
+
+      if (progressText) {
+        progressText.innerText = MonnalisaApp.t("showing_items", { current, total });
+      }
+      if (progressBarFill) {
+        const pct = total === 0 ? 0 : Math.min((current / total) * 100, 100);
+        progressBarFill.style.width = `${pct}%`;
+      }
+      if (loadMoreBtn) {
+        loadMoreBtn.style.display = current >= total ? "none" : "inline-flex";
+      }
+    }
+
+    function updateCategoryBadgeCounts() {
+      const elAll = document.getElementById("count-all");
+      const elDresses = document.getElementById("count-dresses");
+      const elSkirts = document.getElementById("count-skirts");
+      const elJackets = document.getElementById("count-jackets");
+      const elOuterwear = document.getElementById("count-outerwear");
+      const elAccessories = document.getElementById("count-accessories");
+
+      if (elAll) elAll.innerText = MONNALISA_PRODUCTS.length;
+      if (elDresses) elDresses.innerText = MONNALISA_PRODUCTS.filter(p => p.category === "dresses").length;
+      if (elSkirts) elSkirts.innerText = MONNALISA_PRODUCTS.filter(p => p.category === "skirts").length;
+      if (elJackets) elJackets.innerText = MONNALISA_PRODUCTS.filter(p => p.category === "jackets").length;
+      if (elOuterwear) elOuterwear.innerText = MONNALISA_PRODUCTS.filter(p => p.category === "outerwear").length;
+      if (elAccessories) elAccessories.innerText = MONNALISA_PRODUCTS.filter(p => p.category === "accessories").length;
+    }
+
+    function renderReviews() {
+      const container = document.getElementById("reviews-container");
+      if (!container) return;
+      container.innerHTML = "";
+
+      MONNALISA_REVIEWS.forEach(r => {
+        const card = document.createElement("div");
+        card.className = "press-card";
+        card.innerHTML = `
+          <div>
+            <div style="color:var(--accent-gold); margin-bottom:10px; font-size:0.85rem;">
+              ${'<i class="fa-solid fa-star"></i>'.repeat(r.rating)}
+            </div>
+            <p class="press-body">"${MonnalisaApp.lang === "en" ? r.text_en : r.text_it}"</p>
+          </div>
+          <div style="border-top:1px solid var(--border-subtle); padding-top:12px; margin-top:16px; display:flex; justify-content:space-between; align-items:center;">
+            <span class="press-author">${r.author} — ${r.location}</span>
+            <span style="font-size:0.7rem; color:var(--text-muted);">${r.date}</span>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // Callbacks on language or currency change
+    function onLanguageChange() {
+      renderHomeProducts();
+      renderReviews();
+    }
+
+    function onCurrencyChange() {
+      renderHomeProducts();
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      updateCategoryBadgeCounts();
+      renderHomeProducts();
+      renderReviews();
+
+      // Filter tabs
+      document.querySelectorAll(".filter-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          homeActiveCategory = btn.dataset.category;
+          homeDisplayedCount = HOME_ITEMS_PER_LOAD;
+          renderHomeProducts();
+        });
+      });
+
+      // Load more button
+      const loadBtn = document.getElementById("load-more-btn");
+      if (loadBtn) {
+        loadBtn.addEventListener("click", () => {
+          homeDisplayedCount += HOME_ITEMS_PER_LOAD;
+          renderHomeProducts();
+        });
+      }
+
+      // Concierge form
+      const conciergeForm = document.getElementById("concierge-form");
+      if (conciergeForm) {
+        conciergeForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const name = document.getElementById("vip-name").value;
+          const phone = document.getElementById("vip-phone").value;
+          MonnalisaApp.showToast(MonnalisaApp.lang === "en" 
+            ? `Appointment inquiry confirmed for ${name}. Our Rome atelier will contact you via WhatsApp.`
+            : `Richiesta appuntamento confermata per ${name}. Il nostro atelier di Roma ti contatterà su WhatsApp.`);
+          conciergeForm.reset();
+        });
+      }
+    });
+  </script>
+</body>
+</html>

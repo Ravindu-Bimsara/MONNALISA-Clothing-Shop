@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contatti & Boutique — MONNALISA Roma | VFX9+Q2</title>
+  <meta name="description" content="Contatta Monnalisa Roma: indirizzo boutique VFX9+Q2 Roma, telefono +393404825926, chat WhatsApp diretta e modulo di contatto." />
+  
+  <!-- Google Fonts: Luxury Editorial Serifs & Modern Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Italiana&family=Plus+Jakarta+Sans:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./css/main.css" />
+</head>
+<body>
+
+  <!-- Announcement Bar with Live Clocks -->
+  <aside class="announcement-bar">
+    <div class="announcement-track">
+      <span data-i18n="announcement_text">BOUTIQUE MONNALISA ROMA — SPEDIZIONE COMPLIMENTARE SU TUTTI GLI ORDINI IN ITALIA ED EUROPA</span>
+      <span class="live-clocks">
+        <span data-i18n="announcement_clock">ROMA</span>: <span id="rome-time">--:--</span> | 
+        PARIGI: <span id="paris-time">--:--</span> | 
+        NYC: <span id="nyc-time">--:--</span>
+      </span>
+    </div>
+  </aside>
+
+  <!-- Sticky Luxury Header -->
+  <header class="site-header" id="navbar">
+    <div class="header-inner">
+      <nav class="nav-left">
+        <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
+        <a href="shop.html" class="nav-link" data-i18n="nav_shop">Collezione</a>
+        <a href="shop.html?filter=new" class="nav-link" data-i18n="nav_new">Nuovi Arrivi</a>
+        <a href="sale.html" class="nav-link" data-i18n="nav_sale">Saldi</a>
+        <a href="about.html" class="nav-link" data-i18n="nav_about">Chi Siamo</a>
+        <a href="contact.html" class="nav-link active" data-i18n="nav_contact">Contatti</a>
+      </nav>
+
+      <div class="brand-monogram">
+        <a href="index.html">MONNALISA</a>
+      </div>
+
+      <div class="nav-right">
+        <!-- Language Switcher -->
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="it">IT</button>
+          <span class="lang-divider">/</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+
+        <!-- Currency Selector -->
+        <select class="currency-select" aria-label="Currency Selector">
+          <option value="EUR">EUR (€)</option>
+          <option value="USD">USD ($)</option>
+          <option value="GBP">GBP (£)</option>
+          <option value="JPY">JPY (¥)</option>
+        </select>
+
+        <!-- Wishlist Icon -->
+        <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge wishlist-count-badge">0</span>
+        </a>
+
+        <!-- Cart Trigger -->
+        <button class="icon-btn cart-trigger" aria-label="Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="badge cart-count-badge">0</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Open Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contact Hero Banner -->
+  <section class="shop-hero-banner">
+    <div class="breadcrumb" style="justify-content:center;">
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <span>/</span>
+      <span class="current" data-i18n="nav_contact">Contatti</span>
+    </div>
+    <span class="collab-tag" data-i18n="hero_tag">ROMA — CAPITALE DELLA MODA</span>
+    <h1 style="font-family:var(--font-serif); font-size:2.8rem; letter-spacing:0.18em; margin:12px 0;" data-i18n="contact_title">
+      CONTATTACI O VIENI A TROVARCI
+    </h1>
+    <p style="color:var(--text-muted); max-width:700px; margin:0 auto; font-size:0.95rem; line-height:1.7;" data-i18n="contact_desc">
+      Siamo sempre felici di accoglierti nella nostra boutique a Roma o assisterti tramite WhatsApp e telefono per qualsiasi consiglio di stile o taglia.
+    </p>
+  </section>
+
+  <!-- Contact Content Wrapper -->
+  <section class="contact-section-wrapper">
+    <!-- Left: Boutique Official Details & Quick Actions -->
+    <div class="contact-card-info">
+      <h2 style="font-family:var(--font-serif); font-size:1.4rem; letter-spacing:0.15em; margin-bottom:28px; border-bottom:1px solid var(--border-subtle); padding-bottom:15px;" data-i18n="contact_info_heading">
+        INFORMAZIONI BOUTIQUE
+      </h2>
+
+      <!-- Address Item -->
+      <div class="contact-meta-item">
+        <div class="contact-meta-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <div class="contact-meta-text">
+          <h4 data-i18n="contact_address_label">Indirizzo Boutique</h4>
+          <p>Monnalisa Shop</p>
+          <p style="color:var(--text-primary); font-weight:500;">VFX9+Q2 Roma, Città Metropolitana di Roma Capitale, Italia</p>
+        </div>
+      </div>
+
+      <!-- Phone Item -->
+      <div class="contact-meta-item">
+        <div class="contact-meta-icon"><i class="fa-solid fa-phone"></i></div>
+        <div class="contact-meta-text">
+          <h4 data-i18n="contact_phone_label">Telefono Diretto</h4>
+          <p><a href="tel:+393404825926" style="color:var(--text-primary); font-weight:600; font-size:1.05rem;">+39 340 482 5926</a></p>
+          <p style="font-size:0.75rem;">Chiamata diretta con la boutique a Roma</p>
+        </div>
+      </div>
+
+      <!-- WhatsApp Item -->
+      <div class="contact-meta-item">
+        <div class="contact-meta-icon" style="color:#25d366; border-color:#25d366;"><i class="fa-brands fa-whatsapp"></i></div>
+        <div class="contact-meta-text">
+          <h4 data-i18n="contact_whatsapp_label">WhatsApp Assistenza</h4>
+          <p><a href="https://wa.me/393404825926" target="_blank" rel="noopener" style="color:#25d366; font-weight:600;">+39 340 482 5926</a></p>
+          <p style="font-size:0.75rem;">Consulenza fotografica capi, taglie e disponibilità</p>
+        </div>
+      </div>
+
+      <!-- Hours Item -->
+      <div class="contact-meta-item">
+        <div class="contact-meta-icon"><i class="fa-regular fa-clock"></i></div>
+        <div class="contact-meta-text">
+          <h4 data-i18n="contact_hours_label">Orari di Apertura</h4>
+          <p>Lunedì – Sabato: 10:00 – 19:30</p>
+          <p>Domenica: Su appuntamento privato</p>
+        </div>
+      </div>
+
+      <!-- Direct Buttons -->
+      <div class="contact-direct-actions">
+        <a href="https://maps.app.goo.gl/5teJvapkdo6K3t237" target="_blank" rel="noopener" class="solid-btn" style="flex:1; text-align:center;">
+          <i class="fa-solid fa-diamond-turn-right"></i> <span data-i18n="open_maps">APRI SU GOOGLE MAPS</span>
+        </a>
+        <a href="https://wa.me/393404825926" target="_blank" rel="noopener" class="whatsapp-inquire-btn" style="flex:1;">
+          <i class="fa-brands fa-whatsapp"></i> <span data-i18n="chat_whatsapp">SCRIVICI SU WHATSAPP</span>
+        </a>
+      </div>
+
+      <!-- Store Facade Image & Maps Card -->
+      <div class="map-embed-preview">
+        <img src="images/boutique-facade-rome.jpg" alt="Vetrina Monnalisa Roma" style="width:100%; height:200px; object-fit:cover; margin-bottom:15px; border:1px solid var(--border-subtle);" />
+        <h4 style="font-family:var(--font-serif); font-size:1.1rem; margin-bottom:6px;">Monnalisa Shop Roma</h4>
+        <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:12px;">Posizione verificata: VFX9+Q2 Roma</p>
+        <a href="https://maps.app.goo.gl/5teJvapkdo6K3t237" target="_blank" rel="noopener" class="outline-btn" style="font-size:0.75rem; padding:8px 20px;">
+          Visualizza Mappa Dettagliata &rarr;
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Validated Contact Form -->
+    <div style="background:var(--bg-secondary); border:1px solid var(--border-subtle); padding:45px;">
+      <h2 style="font-family:var(--font-serif); font-size:1.4rem; letter-spacing:0.15em; margin-bottom:15px;" data-i18n="contact_form_heading">
+        INVIA UN MESSAGGIO
+      </h2>
+      <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:30px;">
+        Compila il modulo sottostante per qualsiasi richiesta, domanda sulla vestibilità dei capi o per prenotare una prova abito.
+      </p>
+
+      <form id="contact-main-form" class="concierge-form" novalidate>
+        <div class="form-row">
+          <div>
+            <label class="selector-label" data-i18n="form_name">Nome Completo *</label>
+            <input type="text" id="contact-name" placeholder="es. Giulia Rossi" required />
+            <span class="field-error" id="err-name" style="display:none; color:#e63946; font-size:0.7rem; margin-top:4px;"></span>
+          </div>
+          <div>
+            <label class="selector-label" data-i18n="form_email">Indirizzo Email *</label>
+            <input type="email" id="contact-email" placeholder="es. giulia@example.it" required />
+            <span class="field-error" id="err-email" style="display:none; color:#e63946; font-size:0.7rem; margin-top:4px;"></span>
+          </div>
+        </div>
+
+        <div>
+          <label class="selector-label" data-i18n="form_subject">Oggetto *</label>
+          <input type="text" id="contact-subject" placeholder="es. Informazione abito ricamato peonia" required />
+          <span class="field-error" id="err-subject" style="display:none; color:#e63946; font-size:0.7rem; margin-top:4px;"></span>
+        </div>
+
+        <div>
+          <label class="selector-label" data-i18n="form_message">Il Tuo Messaggio *</label>
+          <textarea id="contact-message" rows="5" placeholder="Scrivi qui la tua richiesta o le informazioni desiderate..." required></textarea>
+          <span class="field-error" id="err-message" style="display:none; color:#e63946; font-size:0.7rem; margin-top:4px;"></span>
+        </div>
+
+        <button type="submit" class="solid-btn full-btn" data-i18n="form_submit">
+          INVIA RICHIESTA
+        </button>
+
+        <div style="font-size:0.72rem; color:var(--text-muted); text-align:center; margin-top:12px;">
+          * Tutti i campi sono obbligatori. Dimostrazione frontend: nessun dato viene inviato a server esterni.
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Luxury Footer -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-col brand-col">
+        <h2 class="footer-logo">MONNALISA</h2>
+        <p data-i18n="footer_desc">Boutique di moda femminile a Roma. Abiti eleganti, completi sartoriali, maglieria di lusso e accessori preziosi.</p>
+        <div style="margin-bottom:12px;">
+          <a href="https://maps.app.goo.gl/5teJvapkdo6K3t237" target="_blank" rel="noopener" style="color:var(--accent-gold); font-size:0.8rem; display:inline-flex; align-items:center; gap:8px;">
+            <i class="fa-solid fa-location-dot"></i> VFX9+Q2 Roma, Italia
+          </a>
+        </div>
+        <div>
+          <a href="tel:+393404825926" style="color:var(--text-muted); font-size:0.8rem; display:inline-flex; align-items:center; gap:8px;">
+            <i class="fa-solid fa-phone"></i> +39 340 482 5926
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="col-title" data-i18n="footer_col_nav">Esplora</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="shop.html" data-i18n="nav_shop">Collezione</a></li>
+          <li><a href="sale.html" data-i18n="nav_sale">Saldi & Offerte</a></li>
+          <li><a href="about.html" data-i18n="nav_about">Chi Siamo</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">Contatti</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="col-title" data-i18n="footer_col_categories">Collezioni</h4>
+        <ul>
+          <li><a href="shop.html?cat=dresses" data-i18n="cat_dresses">Abiti da Sera & Giorno</a></li>
+          <li><a href="shop.html?cat=skirts" data-i18n="cat_skirts">Gonne Eleganti</a></li>
+          <li><a href="shop.html?cat=jackets" data-i18n="cat_jackets">Giacche & Sartoria</a></li>
+          <li><a href="shop.html?cat=outerwear" data-i18n="cat_outerwear">Cappotti & Capispalla</a></li>
+          <li><a href="shop.html?cat=accessories" data-i18n="cat_accessories">Accessori & Gioielli</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter-col">
+        <h4 class="col-title" data-i18n="newsletter_title">Newsletter Monnalisa Privé</h4>
+        <p data-i18n="newsletter_desc">Ricevi in anteprima le nuove collezioni, gli inviti agli eventi privati in boutique e le promozioni esclusive.</p>
+        <form class="subscribe-box newsletter-form">
+          <input type="email" placeholder="LA TUA EMAIL" data-i18n-placeholder="newsletter_placeholder" required />
+          <button type="submit" class="subscribe-btn" data-i18n="newsletter_btn">ISCRIVITI</button>
+        </form>
+        <div style="margin-top:20px;">
+          <a href="https://wa.me/393404825926" target="_blank" rel="noopener" style="color:#25d366; font-size:0.8rem; display:inline-flex; align-items:center; gap:8px;">
+            <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp: +39 340 482 5926
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 MONNALISA SHOP ROMA. <span data-i18n="footer_rights">TUTTI I DIRITTI RISERVATI.</span></p>
+      <div class="legal-links">
+        <a href="contact.html">Boutique Roma</a>
+        <a href="https://maps.app.goo.gl/5teJvapkdo6K3t237" target="_blank" rel="noopener">Google Maps</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-out Shopping Bag Drawer -->
+  <div class="cart-drawer-backdrop" id="cart-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="drawer-header">
+      <h3><span data-i18n="cart_title">IL TUO CARRELLO</span> (<span id="cart-items-count">0</span>)</h3>
+      <button class="close-drawer-btn" id="close-cart-btn">&times;</button>
+    </div>
+    <div class="drawer-body" id="cart-items-list">
+      <div class="empty-cart-msg" data-i18n="cart_empty">Il tuo carrello è attualmente vuoto.</div>
+    </div>
+    <div class="drawer-footer">
+      <div class="cart-subtotal">
+        <span data-i18n="cart_subtotal">Subtotale</span>
+        <span id="cart-total-price">€ 0.00</span>
+      </div>
+      <button class="checkout-btn" id="checkout-btn" data-i18n="cart_checkout_btn">PROCEDI ALL'ACQUISTO</button>
+      <div style="margin-top:10px; text-align:center;">
+        <a href="cart.html" style="font-size:0.75rem; color:var(--accent-gold); text-decoration:underline;">Vedi Pagina Carrello Completa</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="mobile-nav-header">
+      <div class="brand-monogram">
+        <a href="index.html">MONNALISA</a>
+      </div>
+      <button class="mobile-close-btn" id="mobile-nav-close">&times;</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link" data-i18n="nav_home">Home</a>
+      <a href="shop.html" class="mobile-nav-link" data-i18n="nav_shop">Collezione</a>
+      <a href="shop.html?filter=new" class="mobile-nav-link" data-i18n="nav_new">Nuovi Arrivi</a>
+      <a href="sale.html" class="mobile-nav-link" data-i18n="nav_sale">Saldi & Offerte</a>
+      <a href="about.html" class="mobile-nav-link" data-i18n="nav_about">Chi Siamo</a>
+      <a href="contact.html" class="mobile-nav-link active" data-i18n="nav_contact">Contatti</a>
+      <a href="wishlist.html" class="mobile-nav-link" data-i18n="nav_wishlist">I Tuoi Preferiti</a>
+      <a href="cart.html" class="mobile-nav-link" data-i18n="nav_cart">Il Tuo Carrello</a>
+    </div>
+    <div class="mobile-nav-footer">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-size:0.75rem; color:var(--text-muted);" data-i18n="nav_lang">Lingua:</span>
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="it">IT</button>
+          <span class="lang-divider">/</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
+      <a href="https://wa.me/393404825926" target="_blank" rel="noopener" class="whatsapp-inquire-btn" style="width:100%;">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp Roma
+      </a>
+    </div>
+  </aside>
+
+  <!-- Checkout Demo Modal -->
+  <div class="modal-backdrop" id="checkout-demo-modal">
+    <div class="modal-card" style="max-width:650px;">
+      <button class="modal-close-btn">&times;</button>
+      <div id="checkout-demo-content"></div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Action Button -->
+  <a href="https://wa.me/393404825926" id="floating-whatsapp-btn" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp Monnalisa Roma">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="floating-whatsapp-tooltip">Chatta con Monnalisa Roma</span>
+  </a>
+
+  <!-- Toast Notification Wrapper -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="./Script/data.js"></script>
+  <script src="./Script/app.js"></script>
+
+  <!-- Contact Form Validation Controller -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("contact-main-form");
+      if (!form) return;
+
+      const nameInput = document.getElementById("contact-name");
+      const emailInput = document.getElementById("contact-email");
+      const subjectInput = document.getElementById("contact-subject");
+      const messageInput = document.getElementById("contact-message");
+
+      const errName = document.getElementById("err-name");
+      const errEmail = document.getElementById("err-email");
+      const errSubject = document.getElementById("err-subject");
+      const errMessage = document.getElementById("err-message");
+
+      function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      function clearErrors() {
+        [errName, errEmail, errSubject, errMessage].forEach(el => {
+          if (el) {
+            el.style.display = "none";
+            el.innerText = "";
+          }
+        });
+      }
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        clearErrors();
+
+        let isValid = true;
+        const reqMsg = MonnalisaApp.t("form_err_req");
+        const emailMsg = MonnalisaApp.t("form_err_email");
+
+        if (!nameInput.value.trim()) {
+          errName.innerText = reqMsg;
+          errName.style.display = "block";
+          isValid = false;
+        }
+
+        if (!emailInput.value.trim()) {
+          errEmail.innerText = reqMsg;
+          errEmail.style.display = "block";
+          isValid = false;
+        } else if (!validateEmail(emailInput.value.trim())) {
+          errEmail.innerText = emailMsg;
+          errEmail.style.display = "block";
+          isValid = false;
+        }
+
+        if (!subjectInput.value.trim()) {
+          errSubject.innerText = reqMsg;
+          errSubject.style.display = "block";
+          isValid = false;
+        }
+
+        if (!messageInput.value.trim()) {
+          errMessage.innerText = reqMsg;
+          errMessage.style.display = "block";
+          isValid = false;
+        }
+
+        if (isValid) {
+          MonnalisaApp.showToast(MonnalisaApp.t("form_success"));
+          form.reset();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collezione Completa — MONNALISA Roma | Alta Moda Femminile</title>
+  <meta name="description" content="Esplora la collezione completa di abiti, gonne in tulle, giacche sartoriali e accessori della boutique Monnalisa Roma." />
+  
+  <!-- Google Fonts: Luxury Editorial Serifs & Modern Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Italiana&family=Plus+Jakarta+Sans:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./css/main.css" />
+</head>
+<body>
+
+  <!-- Announcement Bar with Live Clocks -->
+  <aside class="announcement-bar">
+    <div class="announcement-track">
+      <span data-i18n="announcement_text">BOUTIQUE MONNALISA ROMA — SPEDIZIONE COMPLIMENTARE SU TUTTI GLI ORDINI IN ITALIA ED EUROPA</span>
+      <span class="live-clocks">
+        <span data-i18n="announcement_clock">ROMA</span>: <span id="rome-time">--:--</span> | 
+        PARIGI: <span id="paris-time">--:--</span> | 
+        NYC: <span id="nyc-time">--:--</span>
+      </span>
+    </div>
+  </aside>
+
+  <!-- Sticky Luxury Header -->
+  <header class="site-header" id="navbar">
+    <div class="header-inner">
+      <nav class="nav-left">
+        <a href="index.html" class="nav-link" data-i18n="nav_home">Home</a>
+        <a href="shop.html" class="nav-link active" data-i18n="nav_shop">Collezione</a>
+        <a href="shop.html?filter=new" class="nav-link" data-i18n="nav_new">Nuovi Arrivi</a>
+        <a href="sale.html" class="nav-link" data-i18n="nav_sale">Saldi</a>
+        <a href="about.html" class="nav-link" data-i18n="nav_about">Chi Siamo</a>
+        <a href="contact.html" class="nav-link" data-i18n="nav_contact">Contatti</a>
+      </nav>
+
+      <div class="brand-monogram">
+        <a href="index.html">MONNALISA</a>
+      </div>
+
+      <div class="nav-right">
+        <!-- Language Switcher -->
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="it">IT</button>
+          <span class="lang-divider">/</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+
+        <!-- Currency Selector -->
+        <select class="currency-select" aria-label="Currency Selector">
+          <option value="EUR">EUR (€)</option>
+          <option value="USD">USD ($)</option>
+          <option value="GBP">GBP (£)</option>
+          <option value="JPY">JPY (¥)</option>
+        </select>
+
+        <!-- Wishlist Icon -->
+        <a href="wishlist.html" class="icon-btn" aria-label="Wishlist">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge wishlist-count-badge">0</span>
+        </a>
+
+        <!-- Cart Trigger -->
+        <button class="icon-btn cart-trigger" aria-label="Cart">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="badge cart-count-badge">0</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Open Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Shop Hero Banner -->
+  <section class="shop-hero-banner">
+    <div class="breadcrumb" style="justify-content:center;">
+      <a href="index.html" data-i18n="nav_home">Home</a>
+      <span>/</span>
+      <span class="current" data-i18n="nav_shop">Collezione</span>
+    </div>
+    <span class="collab-tag" data-i18n="hero_tag">ROMA — CAPITALE DELLA MODA</span>
+    <h1 style="font-family:var(--font-serif); font-size:2.8rem; letter-spacing:0.18em; margin:12px 0;" data-i18n="sec_collections_title">
+      LE NOSTRE COLLEZIONI
+    </h1>
+    <p style="color:var(--text-muted); max-width:650px; margin:0 auto; font-size:0.9rem;" data-i18n="sec_collections_sub">
+      SELEZIONE CURATA PER OGNI OCCASIONE
+    </p>
+  </section>
+
+  <!-- Shop Interactive Toolbar (Search, Filter, Sort) -->
+  <section class="shop-toolbar">
+    <!-- Live Search Input -->
+    <div class="shop-search-box">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="shop-search-input" placeholder="Cerca abiti, gonne, giacche..." data-i18n-placeholder="filter_search_placeholder" />
+    </div>
+
+    <!-- Filters and Sort Options -->
+    <div class="shop-filters-row">
+      <!-- Category Filter -->
+      <select id="shop-cat-select" class="shop-select">
+        <option value="all" data-i18n="cat_all">Tutti i Capi</option>
+        <option value="dresses" data-i18n="cat_dresses">Abiti da Sera & Giorno</option>
+        <option value="skirts" data-i18n="cat_skirts">Gonne Eleganti</option>
+        <option value="tops" data-i18n="cat_tops">Top & Camicie</option>
+        <option value="trousers" data-i18n="cat_trousers">Pantaloni Sartoriali</option>
+        <option value="jackets" data-i18n="cat_jackets">Giacche & Completi</option>
+        <option value="outerwear" data-i18n="cat_outerwear">Cappotti & Capispalla</option>
+        <option value="accessories" data-i18n="cat_accessories">Accessori & Gioielli</option>
+      </select>
+
+      <!-- Special Filter (All, New, Sale) -->
+      <select id="shop-special-select" class="shop-select">
+        <option value="all" data-i18n="filter_all">Tutti</option>
+        <option value="new" data-i18n="badge_new">Nuovi Arrivi</option>
+        <option value="sale" data-i18n="badge_sale">Saldi & Offerte</option>
+      </select>
+
+      <!-- Sort Filter -->
+      <select id="shop-sort-select" class="shop-select">
+        <option value="default" data-i18n="sort_default">Consigliati</option>
+        <option value="price-asc" data-i18n="sort_price_asc">Prezzo: dal più basso</option>
+        <option value="price-desc" data-i18n="sort_price_desc">Prezzo: dal più alto</option>
+        <option value="newest" data-i18n="sort_newest">Più Recenti</option>
+        <option value="popular" data-i18n="sort_popular">Più Popolari</option>
+      </select>
+
+      <!-- Reset Filters Button -->
+      <button id="shop-reset-filters-btn" class="reset-filter-btn" data-i18n="filter_clear">
+        <i class="fa-solid fa-arrow-rotate-left"></i> Azzera Filtri
+      </button>
+    </div>
+  </section>
+
+  <!-- Product Grid Section -->
+  <section style="max-width:1600px; margin:20px auto 100px; padding:0 40px;">
+    <!-- Active Result Count -->
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:25px; padding-bottom:15px; border-bottom:1px solid var(--border-subtle);">
+      <span id="shop-results-count" style="font-size:0.8rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-muted);">
+        Visualizzati 16 capi
+      </span>
+      <span style="font-size:0.75rem; color:var(--accent-gold); letter-spacing:0.1em;">
+        <i class="fa-solid fa-gem"></i> Monnalisa Atelier Roma
+      </span>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-grid" id="shop-products-grid"></div>
+
+    <!-- Empty State -->
+    <div id="shop-empty-state" style="display:none; text-align:center; padding:80px 20px; background:var(--bg-secondary); border:1px solid var(--border-subtle); margin:40px 0;">
+      <i class="fa-solid fa-magnifying-glass" style="font-size:3rem; color:var(--accent-gold); margin-bottom:20px;"></i>
+      <h3 style="font-family:var(--font-serif); font-size:1.3rem; margin-bottom:10px;" data-i18n="no_products">
+        Nessun capo trovato con i criteri selezionati.
+      </h3>
+      <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:25px;">
+        Prova a modificare le parole chiave o ripristina tutti i filtri di ricerca.
+      </p>
+      <button class="solid-btn" onclick="resetAllShopFilters()" data-i18n="filter_clear">Azzera Filtri</button>
+    </div>
+  </section>
+
+  <!-- Luxury Footer -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-col brand-col">
+        <h2 class="footer-logo">MONNALISA</h2>
+        <p data-i18n="footer_desc">Boutique di moda femminile a Roma. Abiti eleganti, completi sartoriali, maglieria di lusso e accessori preziosi.</p>
+        <div style="margin-bottom:12px;">
+          <a href="https://maps.app.goo.gl/5teJvapkdo6K3t237" target="_blank" rel="noopener" style="color:var(--accent-gold); font-size:0.8rem; display:inline-flex; align-items:center; gap:8px;">
+            <i class="fa-solid fa-location-dot"></i> VFX9+Q2 Roma, Italia
+          </a>
+        </div>
+        <div>
+          <a href="tel:+393404825926" style="color:var(--text-muted); font-size:0.8rem; display:inline-flex; align-items:center; gap:8px;">
+            <i class="fa-solid fa-phone"></i> +39 340 482 5926
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="col-title" data-i18n="footer_col_nav">Esplora</h4>
+        <ul>
+          <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+          <li><a href="shop.html" data-i18n="nav_shop">Collezione</a></li>
+          <li><a href="sale.html" data-i18n="nav_sale">Saldi & Offerte</a></li>
+          <li><a href="about.html" data-i18n="nav_about">Chi Siamo</a></li>
+          <li><a href="contact.html" data-i18n="nav_contact">Contatti</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="col-title" data-i18n="footer_col_categories">Collezioni</h4>
+        <ul>
+          <li><a href="shop.html?cat=dresses" data-i18n="cat_dresses">Abiti da Sera & Giorno</a></li>
+          <li><a href="shop.html?cat=skirts" data-i18n="cat_skirts">Gonne Eleganti</a></li>
+          <li><a href="shop.html?cat=jackets" data-i18n="cat_jackets">Giacche & Sartoria</a></li>
+          <li><a href="shop.html?cat=outerwear" data-i18n="cat_outerwear">Cappotti & Capispalla</a></li>
+          <li><a href="shop.html?cat=accessories" data-i18n="cat_accessories">Accessori & Gioielli</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter-col">
+        <h4 class="col-title" data-i18n="newsletter_title">Newsletter Monnalisa Privé</h4>
+        <p data-i18n="newsletter_desc">Ricevi in anteprima le nuove collezioni, gli inviti agli eventi privati in boutique e le promozioni esclusive.</p>
+        <form class="subscribe-box newsletter-form">
+          <input type="email" placeholder="LA TUA EMAIL" data-i18n-placeholder="newsletter_placeholder" required />
+          <button type="submit" class="subscribe-btn" data-i18n="newsletter_btn">ISCRIVITI</button>
+        </form>
+        <div style="margin-top:20px;">
+          <a href="https://wa.me/393404825926" target="_blank" rel="noopener" style="color:#25d366; font-size:0.8rem; display:inline-flex; align-items:center; gap:8px;">
+            <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp: +39 340 482 5926
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 MONNALISA SHOP ROMA. <span data-i18n="footer_rights">TUTTI I DIRITTI RISERVATI.</span></p>
+      <div class="legal-links">
+        <a href="contact.html">Boutique Roma</a>
+        <a href="https://maps.app.goo.gl/5teJvapkdo6K3t237" target="_blank" rel="noopener">Google Maps</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-out Shopping Bag Drawer -->
+  <div class="cart-drawer-backdrop" id="cart-backdrop"></div>
+  <aside class="cart-drawer" id="cart-drawer">
+    <div class="drawer-header">
+      <h3><span data-i18n="cart_title">IL TUO CARRELLO</span> (<span id="cart-items-count">0</span>)</h3>
+      <button class="close-drawer-btn" id="close-cart-btn">&times;</button>
+    </div>
+    <div class="drawer-body" id="cart-items-list">
+      <div class="empty-cart-msg" data-i18n="cart_empty">Il tuo carrello è attualmente vuoto.</div>
+    </div>
+    <div class="drawer-footer">
+      <div class="cart-subtotal">
+        <span data-i18n="cart_subtotal">Subtotale</span>
+        <span id="cart-total-price">€ 0.00</span>
+      </div>
+      <button class="checkout-btn" id="checkout-btn" data-i18n="cart_checkout_btn">PROCEDI ALL'ACQUISTO</button>
+      <div style="margin-top:10px; text-align:center;">
+        <a href="cart.html" style="font-size:0.75rem; color:var(--accent-gold); text-decoration:underline;">Vedi Pagina Carrello Completa</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="mobile-nav-header">
+      <div class="brand-monogram">
+        <a href="index.html">MONNALISA</a>
+      </div>
+      <button class="mobile-close-btn" id="mobile-nav-close">&times;</button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link" data-i18n="nav_home">Home</a>
+      <a href="shop.html" class="mobile-nav-link active" data-i18n="nav_shop">Collezione</a>
+      <a href="shop.html?filter=new" class="mobile-nav-link" data-i18n="nav_new">Nuovi Arrivi</a>
+      <a href="sale.html" class="mobile-nav-link" data-i18n="nav_sale">Saldi & Offerte</a>
+      <a href="about.html" class="mobile-nav-link" data-i18n="nav_about">Chi Siamo</a>
+      <a href="contact.html" class="mobile-nav-link" data-i18n="nav_contact">Contatti</a>
+      <a href="wishlist.html" class="mobile-nav-link" data-i18n="nav_wishlist">I Tuoi Preferiti</a>
+      <a href="cart.html" class="mobile-nav-link" data-i18n="nav_cart">Il Tuo Carrello</a>
+    </div>
+    <div class="mobile-nav-footer">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-size:0.75rem; color:var(--text-muted);" data-i18n="nav_lang">Lingua:</span>
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="it">IT</button>
+          <span class="lang-divider">/</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
+      <a href="https://wa.me/393404825926" target="_blank" rel="noopener" class="whatsapp-inquire-btn" style="width:100%;">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp Roma
+      </a>
+    </div>
+  </aside>
+
+  <!-- Quick View Modal -->
+  <div class="modal-backdrop" id="quick-view-modal">
+    <div class="modal-card">
+      <button class="modal-close-btn">&times;</button>
+      <div id="qv-modal-content"></div>
+    </div>
+  </div>
+
+  <!-- Checkout Demo Modal -->
+  <div class="modal-backdrop" id="checkout-demo-modal">
+    <div class="modal-card" style="max-width:650px;">
+      <button class="modal-close-btn">&times;</button>
+      <div id="checkout-demo-content"></div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Action Button -->
+  <a href="https://wa.me/393404825926" id="floating-whatsapp-btn" class="floating-whatsapp" target="_blank" rel="noopener" aria-label="WhatsApp Monnalisa Roma">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="floating-whatsapp-tooltip">Chatta con Monnalisa Roma</span>
+  </a>
+
+  <!-- Toast Notification Wrapper -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="./Script/data.js"></script>
+  <script src="./Script/app.js"></script>
+
+  <!-- Shop Page Controller -->
+  <script>
+    let shopCategory = "all";
+    let shopSpecial = "all"; // 'all', 'new', 'sale'
+    let shopSearchQuery = "";
+    let shopSort = "default";
+
+    function parseUrlParams() {
+      const params = new URLSearchParams(window.location.search);
+      if (params.has("cat")) {
+        shopCategory = params.get("cat");
+        const select = document.getElementById("shop-cat-select");
+        if (select) select.value = shopCategory;
+      }
+      if (params.has("filter")) {
+        shopSpecial = params.get("filter");
+        const specialSelect = document.getElementById("shop-special-select");
+        if (specialSelect) specialSelect.value = shopSpecial;
+      }
+      if (params.has("q")) {
+        shopSearchQuery = params.get("q").toLowerCase().trim();
+        const searchInput = document.getElementById("shop-search-input");
+        if (searchInput) searchInput.value = shopSearchQuery;
+      }
+    }
+
+    function getFilteredShopProducts() {
+      return MONNALISA_PRODUCTS.filter(p => {
+        // Category filter
+        if (shopCategory !== "all" && p.category !== shopCategory) return false;
+
+        // Special filter
+        if (shopSpecial === "new" && !p.isNew) return false;
+        if (shopSpecial === "sale" && !p.onSale) return false;
+
+        // Search filter
+        if (shopSearchQuery) {
+          const matchTitle = (p.title_it + " " + p.title_en).toLowerCase().includes(shopSearchQuery);
+          const matchDesc = (p.desc_it + " " + p.desc_en).toLowerCase().includes(shopSearchQuery);
+          const matchCat = (p.category_it + " " + p.category_en).toLowerCase().includes(shopSearchQuery);
+          if (!matchTitle && !matchDesc && !matchCat) return false;
+        }
+
+        return true;
+      }).sort((a, b) => {
+        const priceA = a.onSale && a.salePriceEUR ? a.salePriceEUR : a.priceEUR;
+        const priceB = b.onSale && b.salePriceEUR ? b.salePriceEUR : b.priceEUR;
+
+        if (shopSort === "price-asc") return priceA - priceB;
+        if (shopSort === "price-desc") return priceB - priceA;
+        if (shopSort === "newest") return (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0);
+        if (shopSort === "popular") return b.rating - a.rating;
+        return 0; // default
+      });
+    }
+
+    function renderShopProducts() {
+      const container = document.getElementById("shop-products-grid");
+      const emptyState = document.getElementById("shop-empty-state");
+      const countEl = document.getElementById("shop-results-count");
+      if (!container) return;
+
+      const filtered = getFilteredShopProducts();
+
+      if (countEl) {
+        countEl.innerText = MonnalisaApp.t("showing_items", { current: filtered.length, total: MONNALISA_PRODUCTS.length });
+      }
+
+      if (filtered.length === 0) {
+        container.style.display = "none";
+        if (emptyState) emptyState.style.display = "block";
+        return;
+      }
+
+      container.style.display = "grid";
+      if (emptyState) emptyState.style.display = "none";
+      container.innerHTML = "";
+
+      filtered.forEach(p => {
+        const title = MonnalisaApp.lang === "en" ? p.title_en : p.title_it;
+        const desc = MonnalisaApp.lang === "en" ? p.desc_en : p.desc_it;
+        const cat = MonnalisaApp.lang === "en" ? p.category_en : p.category_it;
+        const isFav = MonnalisaApp.isInWishlist(p.id);
+
+        const card = document.createElement("div");
+        card.className = "product-card";
+        card.innerHTML = `
+          <div class="product-thumb">
+            <div class="card-badges">
+              ${p.onSale ? `<span class="badge-pill sale">${MonnalisaApp.t("badge_sale")}</span>` : ""}
+              ${p.isNew ? `<span class="badge-pill new">${MonnalisaApp.t("badge_new")}</span>` : ""}
+            </div>
+
+            <button class="wishlist-toggle-btn ${isFav ? "active" : ""}" data-product-id="${p.id}" title="${MonnalisaApp.t("nav_wishlist")}">
+              <i class="fa-${isFav ? "solid" : "regular"} fa-heart"></i>
+            </button>
+
+            <img src="${p.img}" alt="${title}" loading="lazy" />
+
+            <button class="quick-view-overlay-btn" onclick="MonnalisaApp.openQuickView('${p.id}')">
+              <i class="fa-regular fa-eye"></i> ${MonnalisaApp.t("btn_quick_view")}
+            </button>
+          </div>
+
+          <div class="product-info">
+            <div>
+              <span class="product-category">${cat}</span>
+              <h3 class="product-title">
+                <a href="product-detail.html?id=${p.id}">${title}</a>
+              </h3>
+              <p class="product-desc">${desc}</p>
+            </div>
+
+            <div class="product-footer">
+              <div class="price-container">
+                ${
+                  p.onSale && p.salePriceEUR
+                    ? `<span class="sale-price">${MonnalisaApp.formatPrice(p.salePriceEUR)}</span>
+                       <span class="original-price">${MonnalisaApp.formatPrice(p.priceEUR)}</span>`
+                    : `<span class="product-price">${MonnalisaApp.formatPrice(p.priceEUR)}</span>`
+                }
+              </div>
+              <div class="card-actions">
+                <a href="product-detail.html?id=${p.id}" class="view-detail-link">${MonnalisaApp.t("btn_details")}</a>
+                <button class="add-cart-btn" onclick="MonnalisaApp.addToCart('${p.id}')">
+                  <i class="fa-solid fa-plus"></i> ${MonnalisaApp.t("btn_add_cart")}
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+
+      // Wishlist toggle listener
+      container.querySelectorAll(".wishlist-toggle-btn").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          MonnalisaApp.toggleWishlist(btn.dataset.productId);
+        });
+      });
+    }
+
+    function resetAllShopFilters() {
+      shopCategory = "all";
+      shopSpecial = "all";
+      shopSearchQuery = "";
+      shopSort = "default";
+
+      const catSel = document.getElementById("shop-cat-select");
+      const specialSel = document.getElementById("shop-special-select");
+      const searchInp = document.getElementById("shop-search-input");
+      const sortSel = document.getElementById("shop-sort-select");
+
+      if (catSel) catSel.value = "all";
+      if (specialSel) specialSel.value = "all";
+      if (searchInp) searchInp.value = "";
+      if (sortSel) sortSel.value = "default";
+
+      window.history.replaceState({}, document.title, window.location.pathname);
+      renderShopProducts();
+    }
+
+    function onLanguageChange() {
+      renderShopProducts();
+    }
+
+    function onCurrencyChange() {
+      renderShopProducts();
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      parseUrlParams();
+      renderShopProducts();
+
+      // Listeners
+      const searchInput = document.getElementById("shop-search-input");
+      if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+          shopSearchQuery = e.target.value.toLowerCase().trim();
+          renderShopProducts();
+        });
+      }
+
+      const catSelect = document.getElementById("shop-cat-select");
+      if (catSelect) {
+        catSelect.addEventListener("change", (e) => {
+          shopCategory = e.target.value;
+          renderShopProducts();
+        });
+      }
+
+      const specialSelect = document.getElementById("shop-special-select");
+      if (specialSelect) {
+        specialSelect.addEventListener("change", (e) => {
+          shopSpecial = e.target.value;
+          renderShopProducts();
+        });
+      }
+
+      const sortSelect = document.getElementById("shop-sort-select");
+      if (sortSelect) {
+        sortSelect.addEventListener("change", (e) => {
+          shopSort = e.target.value;
+          renderShopProducts();
+        });
+      }
+
+      const resetBtn = document.getElementById("shop-reset-filters-btn");
+      if (resetBtn) {
+        resetBtn.addEventListener("click", resetAllShopFilters);
+      }
+    });
+  </script>
+</body>
+</html>
